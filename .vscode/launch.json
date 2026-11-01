@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "除錯 / 啟動 WAF 伺服器 (F5)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/waf.exe",
+      "args": ["8080"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb.exe",
+      "setupCommands": [
+        {
+          "description": "為 gdb 啟用整齊列印",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "編譯 WAF 專案 (Build WAF)"
+    }
+  ]
+}

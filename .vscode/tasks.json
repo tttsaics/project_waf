@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "編譯 WAF 專案 (Build WAF)",
+      "command": "g++",
+      "args": [
+        "-std=c++20",
+        "-D_WIN32_WINNT=0x0A00",
+        "-static",
+        "-g",
+        "-I${workspaceFolder}/include",
+        "${workspaceFolder}/src/main.cpp",
+        "${workspaceFolder}/src/rule_engine.cpp",
+        "${workspaceFolder}/src/url_utils.cpp",
+        "-lws2_32",
+        "-o",
+        "${workspaceFolder}/waf.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "使用 g++ 編譯 WAF 防火牆核心"
+    }
+  ]
+}

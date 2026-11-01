@@ -1,0 +1,40 @@
+# 編譯產物與二進位執行檔 (嚴禁提交至 GitHub)
+*.exe
+*.obj
+*.o
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+waf.exe
+waf_server.exe
+
+# 建置目錄與 CMake 暫存檔
+build/
+bin/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# 除錯符號與暫存快取
+*.pdb
+*.idb
+*.dmp
+*.ilk
+
+# VS Code 快取目錄 (保留通用設定檔，忽略本機快取)
+.vscode/.browse.c_cpp.db*
+.vscode/ipch/
+
+# Python 測試腳本快取
+__pycache__/
+*.py[cod]
+
+# 作業系統暫存檔
+Thumbs.db
+.DS_Store
+*.tmp
+*.log
