@@ -1,0 +1,93 @@
+[
+    {
+        "id": "942100",
+        "attack_type": "SQLi",
+        "rule_name": "SQLi-Union-Select",
+        "pattern": "\\bunion\\b\\s+(\\ball\\b\\s+)?\\bselect\\b",
+        "score": 5
+    },
+    {
+        "id": "942110",
+        "attack_type": "SQLi",
+        "rule_name": "SQLi-Tautology",
+        "pattern": "\\b(or|and)\\b\\s+(['\"]?\\w+['\"]?\\s*=\\s*['\"]?\\w+['\"]?|1\\s*=\\s*1|true\\b)",
+        "score": 5
+    },
+    {
+        "id": "942120",
+        "attack_type": "SQLi",
+        "rule_name": "SQLi-Functions",
+        "pattern": "\\b(sleep|benchmark|waitfor\\s+delay|extractvalue|updatexml)\\s*\\(",
+        "score": 5
+    },
+    {
+        "id": "942130",
+        "attack_type": "SQLi",
+        "rule_name": "SQLi-Stacked-Commands",
+        "pattern": ";\\s*(drop|insert|update|delete|create|alter|truncate)\\b",
+        "score": 5
+    },
+    {
+        "id": "942140",
+        "attack_type": "SQLi",
+        "rule_name": "SQLi-Comment-Pattern",
+        "pattern": "(--[\\s\\+]|--$|/\\*.*?\\*/|['\"`\\)]\\s*#|;\\s*#)",
+        "score": 3
+    },
+    {
+        "id": "941100",
+        "attack_type": "XSS",
+        "rule_name": "XSS-Dangerous-Tags",
+        "pattern": "<\\s*(script|iframe|object|embed|svg|style|meta|link|base)\\b[^>]*>?",
+        "score": 5
+    },
+    {
+        "id": "941110",
+        "attack_type": "XSS",
+        "rule_name": "XSS-Event-Handler",
+        "pattern": "\\bon[a-z]{3,20}\\s*=",
+        "score": 5
+    },
+    {
+        "id": "941120",
+        "attack_type": "XSS",
+        "rule_name": "XSS-Pseudo-Protocol",
+        "pattern": "(javascript|vbscript|data)\\s*:[^\\s]+",
+        "score": 5
+    },
+    {
+        "id": "941130",
+        "attack_type": "XSS",
+        "rule_name": "XSS-Dangerous-Functions",
+        "pattern": "\\b(alert|prompt|confirm|eval|document\\.cookie|window\\.location)\\s*\\(",
+        "score": 5
+    },
+    {
+        "id": "930100",
+        "attack_type": "PathTraversal",
+        "rule_name": "Traversal-Dots",
+        "pattern": "(\\.{2,}[/\\\\]|\\.{2,};|/\\.\\./)",
+        "score": 5
+    },
+    {
+        "id": "930110",
+        "attack_type": "PathTraversal",
+        "rule_name": "Traversal-System-Files",
+        "pattern": "(/etc/(passwd|shadow|hosts|group)|(windows|winnt)/system32|boot\\.ini|win\\.ini)",
+        "score": 5
+    },
+    {
+        "id": "932100",
+        "attack_type": "CmdInjection",
+        "rule_name": "Cmd-Chaining-Operators",
+        "pattern": "(&&|\\|\\||;|\\||`|\\$\\()\\s*(cat|ls|dir|whoami|id|bash|sh|cmd|powershell|curl|wget|nc|python|perl|certutil|findstr|net\\s+user)\\b",
+        "score": 5
+    },
+    {
+        "id": "932110",
+        "attack_type": "CmdInjection",
+        "rule_name": "Cmd-Newline-Chaining",
+        "pattern": "[\\r\\n]\\s*(cat|ls|dir|whoami|id|bash|sh|cmd|powershell)\\b",
+        "score": 5
+    }
+]
