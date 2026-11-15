@@ -1,0 +1,5 @@
+.git
+.vscode
+build/
+waf.exe
+*.log
